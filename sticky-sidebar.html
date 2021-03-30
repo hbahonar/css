@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky Sidebar With CSS & JS - hbahonar.ir</title>
+    <style>
+        :root {
+            --space: 2rem;
+            --space-xs: calc(var(--space) / 3);
+            --space-sm: calc(var(--space) / 2);
+            --space-md: calc(var(--space) * 2);
+            --color-accent: whitesmoke;
+            --radius: 0.125rem;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .article {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-width: 40%;
+            padding-right: 15px;
+        }
+
+        .sidebar {
+            flex-grow: 1;
+            flex-basis: 300px;
+            align-self: start;
+            position: sticky;
+            top: 2rem;
+        }
+
+        body {
+            margin: 0 auto;
+            padding: 0 2rem;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.4;
+            max-width: 1400px;
+        }
+
+        header,
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--space-md) 0;
+            padding: var(--space);
+            height: 40vh;
+            background: repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 12px,
+                    var(--color-accent) 12px,
+                    var(--color-accent) 24px
+            );
+        }
+
+        .component {
+            position: relative;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 2px #333;
+        }
+
+        .component .content {
+            padding: var(--space-sm);
+            max-height: 500px;
+        }
+
+        .empty-text {
+            padding: var(--space);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header></header>
+<main>
+    <article class="article">
+        <h2>Dynamic Sticky Sidebar Component</h2>
+        <p>Click on the elements below to add them to the sidebar component.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Added this extra content for spacing purposes. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            sed porta arcu, vitae hendrerit magna. Nullam nec mi augue. Morbi non odio mauris. Vivamus accumsan lectus
+            ac libero ornare lacinia. Etiam quis purus nec augue fermentum interdum. Aliquam sit amet dui rutrum,
+            aliquam augue ut, iaculis arcu. Nunc euismod, magna sit amet gravida gravida, erat diam scelerisque massa,
+            id dignissim sapien elit quis mauris. In interdum lectus id mattis aliquam. Ut pellentesque accumsan
+            consectetur. Curabitur varius mollis lacus, nec rhoncus massa facilisis ac.</p>
+        <p>Maecenas fringilla consectetur blandit. Phasellus pulvinar, eros eleifend fermentum accumsan, leo massa
+            rutrum lectus, nec cursus orci turpis at libero. Quisque dolor ex, suscipit id felis ac, bibendum aliquam
+            enim. Curabitur mollis ligula a ipsum fermentum, in volutpat arcu mattis. Nulla facilisi. Duis mattis
+            venenatis erat non sollicitudin. Phasellus nec augue eget magna eleifend laoreet. Orci varius natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed bibendum dolor euismod erat rhoncus,
+            et mattis enim facilisis. Quisque arcu est, molestie sed massa nec, gravida feugiat massa. Donec id velit
+            mi. Curabitur accumsan elit in magna mollis, quis pharetra felis faucibus.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In molestie
+            magna sit amet lobortis convallis. Etiam at magna eget risus venenatis luctus quis nec justo. Pellentesque
+            elementum imperdiet mi. Vivamus nec fringilla est. Suspendisse tincidunt euismod turpis quis ornare. Donec
+            et dui in massa porttitor malesuada. Aliquam erat volutpat.</p>
+    </article>
+    <aside class="sidebar">
+        <div class="component">
+            <div class="content">
+                <div class="empty-text">Your cart is currently empty</div>
+            </div>
+        </div>
+    </aside>
+</main>
+<footer></footer>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</body>
+</html>
